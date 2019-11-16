@@ -1,0 +1,85 @@
+Database Schema for ETL Project Uisng PostgreSQL 
+
+
+
+create database Cary_crash
+
+create table weather (
+w_id SERIAL PRIMARY KEY,
+date date NOT null,
+precipitation numeric,
+snowfall numeric,
+snowdepth numeric,
+fog boolean,
+fogheavy boolean,
+mist boolean,
+rain boolean,
+fogground boolean,
+ice boolean,
+glaze boolean,
+drizzle boolean,
+snow boolean,
+freezingrain boolean,
+smokehaze boolean,
+hail boolean,
+blowingsnow boolean,
+dust boolean,
+freezingfog boolean
+);
+
+select * from weather;
+
+create table crash (
+c_id SERIAL PRIMARY KEY,
+tamainid int not null,
+road_feature varchar (50),
+road_character varchar (50),
+road_class varchar (50),
+road_configuration varchar (50),
+road_surface varchar (50),
+road_conditions varchar (50),
+light_condition varchar (50),
+weather varchar (50),
+ta_date date not null,
+crash_date varchar (30)
+);
+
+select count(*) from crash;
+
+
+
+create table weather_crash(
+wc_id SERIAL PRIMARY KEY,
+date date,
+precipitation numeric,
+snowfall numeric,
+snowdepth numeric,
+fog boolean,
+fogheavy boolean,
+mist boolean,
+rain boolean,
+fogground boolean,
+ice boolean,
+glaze boolean,
+drizzle boolean,
+snow boolean,
+freezingrain boolean,
+smokehaze boolean,
+hail boolean,
+blowingsnow boolean,
+dust boolean,
+freezingfog Boolean,
+tamainid int,
+road_feature varchar (50),
+road_character varchar (50),
+road_class varchar (50),
+road_configuration varchar (50),
+road_surface varchar (50),
+road_conditions varchar (50),
+light_condition varchar (50),
+weather varchar (50),
+ta_date date,
+crash_date varchar (30)
+);
+
+select count(*) from weather_crash;
